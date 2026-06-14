@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement Sécurisé</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px;
+}
+
+/* CONTENEUR PRINCIPAL */
+
+.container{
+    width:100%;
+    max-width:1100px;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* PARTIE GAUCHE */
+
+.left{
+    width:45%;
+    background:linear-gradient(160deg,#ff6b00,#ff8c00);
+    color:white;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.left h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.left p{
+    font-size:18px;
+    line-height:1.7;
+    opacity:0.95;
+}
+
+.price{
+    margin-top:40px;
+    font-size:45px;
+    font-weight:bold;
+}
+
+/* PARTIE DROITE */
+
+.right{
+    width:55%;
+    padding:50px;
+}
+
+.right h2{
+    color:#111;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+/* INPUTS */
+
+.input-box{
+    margin-bottom:22px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#333;
+}
+
+.input-box input{
+    width:100%;
+    padding:16px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    border-color:#ff6b00;
+    outline:none;
+}
+
+/* LIGNE */
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.row .input-box{
+    width:50%;
+}
+
+/* BOUTON */
+
+.pay-btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    background:#ff6b00;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.pay-btn:hover{
+    background:#e55f00;
+    transform:scale(1.02);
+}
+
+/* MESSAGE */
+
+.success{
+    margin-top:25px;
+    background:#e8ffe8;
+    color:green;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+    display:none;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- GAUCHE -->
+
+    <div class="left">
+        <h1>💳 Paiement Sécurisé</h1>
+
+        <p>
+            Finalisez votre achat rapidement grâce à notre système
+            de paiement sécurisé et professionnel.
+        </p>
+
+        <div class="price">
+            5000FCFA
+            
+
+        </div>
+    </div>
+
+    <!-- DROITE -->
+
+    <div class="right">
+
+        <h2>Informations de paiement</h2>
+
+        <div class="input-box">
+            <label>Nom complet</label>
+            <input type="text" placeholder="Entrez votre nom">
+        </div>
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="exemple@gmail.com">
+        </div>
+
+        <div class="input-box">
+            <label>Numéro de carte</label>
+            <input type="text" placeholder="1234 5678 9012 3456">
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Date d'expiration</label>
+                <input type="text" placeholder="MM/AA">
+            </div>
+
+            <div class="input-box">
+                <label>CVV</label>
+                <input type="password" placeholder="123">
+            </div>
+
+        </div>
+
+        <button class="pay-btn" onclick="payer()">
+            Confirmer le paiement
+        </button>
+
+        <div class="success" id="successMessage">
+            ✅ Paiement confirmé avec succès !
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function payer(){
+
+    document.getElementById("successMessage").style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
